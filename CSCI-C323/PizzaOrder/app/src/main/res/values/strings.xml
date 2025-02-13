@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">PizzaOrder</string>
-    <string-array name="sauce_options">
-        <item>Tomato Basil Sauce ($12)</item>
-        <item>Marinara Sauce ($10)</item>
-        <item>Barbecue Sauce ($15)</item>
-    </string-array>
-</resources>
