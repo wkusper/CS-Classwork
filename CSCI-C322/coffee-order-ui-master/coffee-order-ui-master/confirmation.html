@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+        background-color: #cb943e;
+        margin: 0;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        }
+
+        nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        }
+
+        a {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        margin-bottom: 10px;
+        }
+
+        a:last-child {
+        margin-bottom: 0;
+        }
+
+        a {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        margin-bottom: 10px;
+        }
+
+        a:last-child {
+        margin-bottom: 0;
+        }
+        #links {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        }
+        .receipt-line {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Coffee Order System</a>
+        <div id="links">
+            <a href="orderstatus.html"><b>Order Status</b></a>
+        </div>
+    </nav>
+
+    <div class="receipt" id="receipt">
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const beverage = urlParams.get('beverage');
+            const condiments = urlParams.get('condiments');
+    
+            const orderDetails = getOrderDetails(beverage, condiments);
+            document.getElementById('order-details').textContent = orderDetails;
+    
+            fetchOrderDetails(beverage, condiments);
+        });
+    
+        function getOrderDetails(beverage, condiments) {
+            return `Beverage: ${beverage}, Condiments: ${condiments || 'None'}`;
+        }
+    
+        function fetchOrderDetails(beverage, condiments) {
+            const orderData = {
+                beverage: beverage,
+                condiments: condiments.split(',')
+            };
+    
+            fetch('http://localhost:8080/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(orderData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    setConfirmationDetails(data);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    
+        function setConfirmationDetails(orderData) {
+            document.getElementById("order-id").textContent = `Order ID: ${orderData.id}`;
+            document.getElementById("order-total").textContent = `Order Total: $${orderData.cost.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

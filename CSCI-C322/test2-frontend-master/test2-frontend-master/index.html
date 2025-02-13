@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="goTo('add-question')">Add questions</button>
+    <button onclick="goTo(1)">Make a quiz</button>
+    <button onclick="goTo(2)">View a quiz</button>
+
+    <script>
+      function goTo(page) {
+        location.href = page + '.html';        
+      }
+    </script>
+  </body>
+</html>
