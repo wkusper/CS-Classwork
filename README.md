@@ -1,3 +1,4 @@
+```
 # My Project Collection 📁
 
 A collection of all my class work, each living in its own branch:
@@ -13,3 +14,4 @@ A collection of all my class work, each living in its own branch:
 ## Branch Structure
 
 Each branch contains all of the lab, homework, and in-class assignments
+```
