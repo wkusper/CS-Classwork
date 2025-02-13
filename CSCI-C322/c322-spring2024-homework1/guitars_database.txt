@@ -1,6 +1,0 @@
-V95693,1499.95,Fender,Stratocastor,electric,Alder,Alder
-V9512,1549.95,Fender,Stratocastor,electric,Alder,Alder
-V95693,1499.95,Fender,Stratocastor,electric,Alder,Alder
-V9512,1529.95,Fender,Stratocastor,electric,Alder,Alder
-V95693,1499.95,Fender,Stratocastor,electric,Alder,Alder
-V9512,1549.95,Fender,Stratocastor,electric,Alder,Alder
