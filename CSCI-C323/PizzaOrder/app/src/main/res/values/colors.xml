@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <!-- Orange for buttons and accents -->
-    <color name="orangeAccent">#FF8C00</color>
-    <!-- Eggshell for background -->
-    <color name="eggshellBackground">#F0EAD6</color>
-</resources>
